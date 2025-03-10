@@ -17,7 +17,7 @@ type RabbitMQ struct {
 
 // NewRabbitMQ inicializa la conexión con RabbitMQ
 func NewRabbitMQ() (*RabbitMQ, error) {
-	// Cargar variables de entorno desde .env
+	
 	err := godotenv.Load()
 	if err != nil {
 		log.Println("No se pudo cargar el archivo .env, usando variables del sistema")
@@ -74,7 +74,6 @@ func (r *RabbitMQ) PublishMessage(message string) error {
 	return nil
 }
 
-// Close cierra la conexión y el canal
 func (r *RabbitMQ) Close() {
 	r.channel.Close()
 	r.conn.Close()

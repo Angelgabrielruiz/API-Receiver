@@ -9,10 +9,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	//"gym-system/src/inventory/Mensaje/application/useCases"
-	//"gym-system/src/inventory/Mensaje/domain/entity"
-	//"gym-system/src/inventory/Mensaje/domain/repository"
-	//"gym-system/src/inventory/Mensaje/infraestructure/hub"
 )
 
 // Utilizamos un DTO para adaptarnos a distintos formatos que pueda enviar el front o consumidor.
