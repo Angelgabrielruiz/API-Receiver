@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Iniciando API...")
+	fmt.Println("Iniciando")
 
 	// Iniciar el Hub de WebSocket
 	hub := ws.NewHub()
@@ -26,14 +26,14 @@ func main() {
 	}
 	defer rmq.Close()
 
-	// Inyectar la implementación de RabbitMQ y el hub en el controlador.
+	
 	mensajeController := controllers.NewMensajeController(rmq, hub)
 
-	// Configurar rutas usando mux.
+	
 	router := mux.NewRouter()
 	routes.SetupRoutes(router, mensajeController)
 
-	// Ruta para las conexiones WebSocket.
+	
 	router.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		ws.ServeWs(hub, w, r)
 	})

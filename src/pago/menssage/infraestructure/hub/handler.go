@@ -7,7 +7,7 @@ import (
 )
 
 var upgrader = websocket.Upgrader{
-	// Permitir conexiones de cualquier origen (útil en desarrollo)
+	
 	CheckOrigin: func(r *http.Request) bool {
 		return true
 	},
